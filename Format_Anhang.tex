@@ -1,0 +1,21 @@
+
+% Bezeichnungen und Nummerierungsstile
+\renewcommand{\chaptername}{Anhang}
+% \renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+\renewcommand{\theequation}{\Alph{chapter}.\arabic{equation}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+
+
+% Inhaltsverzeichnislayout fuer 'Anhang'
+\titlecontents{chapter}
+[1em]	% Abstand linker Textrand bis Kapitelueberschriften
+{}	% Textformatierung
+{\contentslabel{1em}}	% Abstand und Nummerierung vor Kapitelueberschriften
+{}
+{\vzPunkte\contentspage} % Formatierung nach Titel bis zur Seitenzahl
+
+
+% Erscheinen von 'Anhang' im Inhaltsverzeichnis
+%\addtocontents{toc}{\protect\contentsline{chapter}{Anhang}{}{}}
+

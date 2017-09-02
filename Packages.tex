@@ -1,0 +1,80 @@
+
+\usepackage[english,german]{babel} 	% Sprachpaket
+% \usepackage[latin1]{inputenc} 		% Konvertierungspaket (Sprachen:Westeuropa)
+\usepackage[utf8]{inputenc} 		% joba Konvertierungspaket (Sprachen:Westeuropa)
+
+\usepackage{ifthen}		% if then
+\usepackage[scaled=0.92]{helvet}
+\ifthenelse{\equal{\Schriftart}{serifenlos}}{
+	\renewcommand{\sfdefault}{phv}
+	\renewcommand{\familydefault}{\sfdefault}	
+}{}
+
+% Anfuehrungszeichen
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+\usepackage[centertags]{amsmath}		% Mathepakete
+\usepackage{amssymb}
+\usepackage{fdsymbol}
+
+%\usepackage[pdftex]{graphicx}
+%\usepackage{epstopdf}
+%\usepackage{eso-pic}
+\usepackage{pstool}
+
+
+\usepackage[absolute]{textpos}
+
+\usepackage[format=hang, font=footnotesize, labelfont=bf]{caption}  % Layout fuer Bildbeschriftung
+
+\usepackage{fancyhdr}	% Definition von Kopf- und Fusszeilen
+
+\usepackage{xcolor}		% fuer farbige Texte und Tabellen (RGB-Farbraum)
+
+\usepackage{calc}
+
+%\usepackage{tocstyle}	% Package fuer Layout des Inhaltsverzeichnisses
+\usepackage[titles]{tocloft}	% Package zum Bearbeiten des Layouts des Abbildungs- und Tabellenverzeichnisses
+
+\usepackage{titletoc}	% Package zum Bearbeiten des Layouts des Inhaltsverzeichnisses
+
+\normalsize
+
+%-----------------------------------------------------------------------------------------------------------%
+
+\usepackage[rigidchapters]{titlesec}
+
+\usepackage{textcomp}
+
+\usepackage[labelformat=simple]{subcaption}	% Subcaptions
+
+\usepackage{enumitem} % Aufzaehlungen
+
+\usepackage{multirow}	% Multirow - Tabellen
+\usepackage{longtable}	% Lange Tabelle
+\usepackage{array}
+\usepackage{booktabs}
+
+%\usepackage{color}		% fuer Farben im allgemeinen
+\usepackage{colortbl}	% fuer die Hintergrundfarbe einzelner Zellen in Tabellen
+\usepackage{ragged2e}
+
+\usepackage{url}		% URL-Package
+
+\usepackage{nomencl}	% Abkuerzungen und Verzeichnisse
+\usepackage{makeidx}	% Index erstellen
+
+\usepackage{blindtext}	% Lorem ipsum
+
+\usepackage[]{hyperref}	% Links usw.
+
+\usepackage{setspace}	% Zeilenabstand
+
+\usepackage[bottom]{footmisc}	% Fussnotenposition
+\usepackage{chngcntr}
+
+\usepackage{pdfpages}
+
+%\usepackage{showframe}% zum Anzeigen des Seitenlayouts
+
+\usepackage{lipsum} %Blindtext

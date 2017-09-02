@@ -1,0 +1,80 @@
+\documentclass[12pt,parskip=half-]{scrartcl}
+
+\input{Format_CV.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Persönliche Angaben				%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Eigene Adresse festgelegt.
+\newcommand*{\VollerName}{Maximilian Mustermann}
+\newcommand*{\AbsenderStrasse}{Musterstraße 1}
+\newcommand*{\AbsenderPLZOrt}{12345 Musterstadt}
+
+% Telefon oder Mobiltelefon eintragen (entsprechend kommentieren)
+\newcommand*{\Telefon}{Tel.: 0123 -- 45678910}
+%\newcommand*{\Telefon}{Mobil-Tel.: 0123 -- 45678910}
+
+\newcommand*{\Email}{Maximilian.Mustermann@muster.de}
+\newcommand*{\OrtDatum}{Musterstadt, \today}
+\newcommand*{\Geburtstag}{01. Januar 2015}
+\newcommand*{\Geburtsort}{Musterstadt}
+
+
+% Titel und Autor des PDFs werden automatisch festgelegt,
+% was aber erst nach der Definition des Namens geht.
+\hypersetup{%
+    pdftitle={Curriculum Vitae von \VollerName},
+    pdfauthor={\VollerName},
+    pdfcreator={\VollerName}
+}
+
+
+\begin{document}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lebenslauf - nicht ändern								%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Curriculum Vitae}
+
+\subsection{Zur Person}
+
+\begin{Abschnitt}
+Name 				& & \VollerName \\
+Anschrift   & & \AbsenderStrasse \\
+						& & \AbsenderPLZOrt \\
+						& & \\
+Geburtstag	& & \Geburtstag \\
+Geburtsort	& & \Geburtsort \\
+						& & \\
+Mobil-Tel.	& & \Telefon \\
+E-Mail			& & \Email \\
+\end{Abschnitt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bildungsweg - bitte Angaben in die Tabelle unten einfügen!			%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Bildungsweg}
+
+\begin{Abschnitt}
+Oktober 2006 -- Februar 2012 & & Studium zum Master of Science (M. Sc.) in Mechatronik an der FAU Erlangen-Nürnberg: \\
+							& & Vertiefungsrichtung\\
+\\							
+Februar 2012	& & Masterarbeit am Lehrstuhl für Fertigungsautomatisierung und Produktionssystematik: \\
+							& & "`\textit{Titel}"' \\
+\\
+Mai 2011 			& & Bachelorarbeit am Lehrstuhl für Sonstige (Note: x,x): \\
+							& & "`\textit{Titel}"'\\
+\\
+Juli 2006    & & Allgemeine Hochschulreife\\
+1997 -- 2006 & & Max-Mustermann-Gymnasium Musterstadt \\
+1993 -- 1997 & & Grundschule Musterstadt
+
+\end{Abschnitt}
+
+\end{document}

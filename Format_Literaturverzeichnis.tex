@@ -1,0 +1,24 @@
+\cleardoublepage
+\thispagestyle{plain}
+
+% Inhaltsverzeichnis-Eintrag
+
+\titlecontents{chapter}
+[0em]
+{\vspace{12pt}}
+{\contentslabel{1em}}
+{}
+{\vzPunkte\contentspage}
+
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+
+% Am besten aus Citavi exportieren
+\bibliography{Literatur}
+% Literaturverzeichnis Stil
+\bibliographystyle{bibstyleFAPS}
+%	Pfad:		C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\bibtex.exe
+%	Argumente:	"%bm"}
+
+
+%% Layout Inhaltsverzeichnis wiederherstellen
+%\input{Format_ToC}

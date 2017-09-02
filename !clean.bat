@@ -1,0 +1,13 @@
+del *.aux
+del *.log
+del *.out
+del *.bbl
+del *.idx
+del *.ilg
+del *.lot
+del *.nlo
+del *.nls
+del *.toc
+del *.lof
+del *.blg
+del *.tps

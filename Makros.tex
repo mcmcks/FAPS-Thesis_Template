@@ -1,0 +1,67 @@
+
+% Makros
+
+\newcommand{\TODO}[1]{{\color{red} #1}}
+\newcommand{\EVTL}[1]{{\color{blue} #1}}
+
+
+\newcommand{\VECSYM}[1]{\boldsymbol{#1}}			% Symbol als Vektor (fett)
+\newcommand{\VEC}[1]{\mathbf{#1}}					% Vektor (fett)
+\newcommand{\sign}[1]{\mbox{sign}\left\{#1\right\}}	% Signum-Funktion
+\newcommand{\intd}{\textnormal{\;d}}				% d bei einem Integral
+\newcommand{\ind}[1]{_\textnormal{#1}}				% konstanter Index in Matheumgebung (nicht kursiv)
+\newcommand{\einheit}[1]{\,\textnormal{#1}}			% Einheit in Matheumgebung (nicht kursiv)
+\newcommand{\const}[1]{\textnormal{#1}}				% Konstante in Matheumgebung (nicht kursiv)
+\newcommand{\prozent}{\,\%}		% Prozent im Mathemodus
+
+
+% Begriffe hervorheben
+\newcommand{\significant}[1]{{\bf #1}}
+\newcommand{\english}[1]{\emph{(engl. #1)}}
+
+% Name
+\newcommand{\name}[1]{\textsc{#1}}
+
+% Abkuerzungs- und Symbolverzeichnis
+\newcommand{\abk}[2]{({#1})\nomenclature[A]{#1}{#2}}
+%\abk{Abkuerzung}{ausgeschrieben}
+
+\newcommand{\sym}[3]{{#1}\nomenclature[S,#2]{#1}{#3}}		% Sortierung eingefuegt
+%\sym{Symbol}{Sortierung}{Symbolbezeichnung}
+
+% Referenzen fuer Formeln
+\newcommand{\glg}[1]{Gleichung~\eqref{#1}}
+% Referenzen fuer Abbildung
+\newcommand{\abb}[1]{Abbildung~\ref{#1}}
+% Referenzen fuer Tabellen
+\newcommand{\tab}[1]{Tabelle~\ref{#1}}
+
+
+% Farben
+\definecolor{dunkelgrau}{rgb}{0.8,0.8,0.8}
+\definecolor{hellgrau}{rgb}{0.9,0.9,0.9}
+\definecolor{fapsgruen}{RGB}{151,193,57}
+\definecolor{fapsblau}{RGB}{41,97,147}
+\definecolor{fapsgraudunkel}{RGB}{95,95,95}
+
+
+% Angaben fuer Literaturverzeichnis
+\newcommand{\bblin}{in}
+\newcommand{\bblvolume}{Vol.}
+\newcommand{\bbledition}{Auflage}
+\newcommand{\bbleditor}{Hrsg.}
+\newcommand{\bbleditors}{Hrsg.}
+\newcommand{\bblseries}{aus der Reihe}
+\newcommand{\bblpp}{S.}
+\newcommand{\bblaccess}{Aufgerufen am}
+
+% Rechts- und linksbuendige Spalten mit fester Breite
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% Abstand der Punkte im Inhaltsverzeichnis / wenn keine Punkte, dann 0pc
+\newcommand{\vzPunkte}{\titlerule*[1pc]{.}}
+
+% Abstand zwischen Zeilen
+\renewcommand{\arraystretch}{1.5}

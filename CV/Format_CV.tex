@@ -1,0 +1,71 @@
+% Pakete
+\usepackage[ansinew]{inputenc}   % UTF8-Kodierung für Umlaute
+\usepackage[T1]{fontenc}      % use TeX encoding then Type 1.
+\usepackage{lmodern}          % Bessere Schriftart (ersetzt CM-Schriften)
+\usepackage{ngerman}          % deutsche Silbentrennung
+\usepackage{graphicx}         % Einbindung von Grafiken
+\usepackage{fancyhdr}         % eigenes Layout einbinden
+\usepackage{pdfpages}         % PDF-Seiten einbinden
+\usepackage{xifthen}          % Wenn-dann-Abfragen
+\usepackage{charter}          % Charter-Schrift
+\usepackage{titlesec}         % Anpassung der Überschriften
+\usepackage{longtable}        % Tabellen über Seitenumbruch hinweg
+\usepackage{setspace}         % Zeilenabstand festlegen
+\usepackage{hyperref}         % Hyperlinks und interne PDF-Verweise
+
+% Layout
+\hbadness=10000                % unterdrückt unwichtige Fehlermeldungen
+\clubpenalty = 300 %10000           % Keine "Schusterjungen"
+\widowpenalty = 300 %10000          % Keine "Hurenkinder"
+\displaywidowpenalty = 300 %10000
+
+% Linie im Kopf ausblenden und im Fuß eine feine Linie
+\renewcommand*{\headrulewidth}{0pt}
+\renewcommand*{\footrulewidth}{0.4pt}
+
+% Überschriftenlayout verändern
+\titlespacing{\section}{0mm}{2em}{2em}
+\titlespacing{\subsection}{0em}{0em}{0em}
+\titleformat{\section}{\normalfont\LARGE\scshape}{}{0mm}{\hspace*{\fill}}
+\titleformat{\subsection}{\normalfont\Large\bfseries\scshape}{}{0mm}{}[\vskip-1.5em\hrulefill]
+
+% Eigene Fusszeile festlegen, Kopfzeile leeren
+\pagestyle{fancy}
+\fancyhead{}
+\cfoot{\VollerName, \AbsenderStrasse, \AbsenderPLZOrt, \Telefon}
+
+% Tabelle für Lebenslauf
+\newlength{\AbstandAbschnitt}
+\newboolean{UnterabschnittBegonnen}
+\newenvironment{Abschnitt}[1][0em]
+{%
+    \setlength{\AbstandAbschnitt}{1cm}%
+    \begin{longtable}{p{0.2\linewidth}p{0.07\linewidth}p{0.65\linewidth}}%
+    \setboolean{UnterabschnittBegonnen}{false}%
+}
+{%
+    \end{longtable}%
+    \vspace{\AbstandAbschnitt}%
+}
+
+% Unterabschnitt in Lebenslauftabelle mit sonstigen Themen
+% Achtung, keine Umgebung, sondern ein Kommando!
+\newlength{\AbstandUnterabschnitt}
+\newcommand{\Unterabschnitt}[3][0em]
+{%
+    \end{longtable}%
+    \ifthenelse{\boolean{UnterabschnittBegonnen}}{%
+        \setlength{\AbstandUnterabschnitt}{-2em}%{-5em}%
+    }{%
+        \setlength{\AbstandUnterabschnitt}{-2em}%
+    }%
+    \addtolength{\AbstandUnterabschnitt}{#1}%
+    \vspace{\AbstandUnterabschnitt}%
+    \textit{#2} #3%
+    \setboolean{UnterabschnittBegonnen}{true}%
+    \begin{longtable}{p{0.3\linewidth}p{0.64\linewidth}}%
+    \\[1em]
+}
+
+
+

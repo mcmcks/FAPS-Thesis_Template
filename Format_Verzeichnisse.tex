@@ -1,0 +1,62 @@
+% Inhaltsverzeichnislayout
+\setcounter{tocdepth}{3} % 3 Gliederungsebenen im Inhaltsverzeichnis
+
+% Formatierung der Verzeichnisse im Inhaltsverzeichnis
+\titlecontents{chapter}
+[0em]	% Abstand linker Textrand bis Kapitelueberschriften
+{}	% Textformatierung
+{}	% Abstand und Nummerierung vor Kapitelueberschriften
+{}
+{\vzPunkte\contentspage} % Formatierung nach Titel bis zur Seitenzahl
+
+% Abbildungsverzeichnis
+\cleardoublepage
+\ifthenelse{\equal{\preChapterToC}{ja}}
+	{\addcontentsline{toc}{chapter}{\listfigurename}}
+	{}
+\addtocontents{lof}{\vskip -0.35cm}
+\renewcommand{\cftfigleader}{\vzPunkte}
+\renewcommand{\cftfigindent}{0em}
+\listoffigures				% Abbildungsverzeichnis
+
+% Tabellenverzeichnis
+\cleardoublepage
+\ifthenelse{\equal{\preChapterToC}{ja}}
+	{\addcontentsline{toc}{chapter}{\listtablename}}
+	{}
+\addtocontents{lot}{\vskip -0.35cm}
+\renewcommand{\cfttableader}{\vzPunkte}
+\renewcommand{\cfttabindent}{0em}
+\listoftables				% Tabellenverzeichnis
+
+% Abkuerzungs- und Symbolverzeichnis
+\cleardoublepage
+\ifthenelse{\equal{\preChapterToC}{ja}}
+	{\addcontentsline{toc}{chapter}{\nomname}}
+	{}
+\printnomenclature			% Abkürzungs- und Symbolverzeichnis
+
+
+% Formatierung des Inhaltsverzeichnisses
+\titlecontents{chapter}
+[1em]	% Abstand linker Textrand bis Kapitelueberschriften
+{\vspace{12pt}\bf}	% Textformatierung
+{\contentslabel{1em}}	% Abstand und Nummerierung vor Kapitelueberschriften
+{}
+{\vzPunkte\contentspage\vspace{8pt}} % Formatierung nach Titel bis zur Seitenzahl
+
+\titlecontents{section}
+[2.79em] % Abstand linker Textrand bis Kapitelueberschriften
+{} % Textformatierung
+{\contentslabel{1.809em}} % Abstand und Nummerierung vor Kapitelueberschriften
+{}
+{\vzPunkte\contentspage} % Formatierung nach Titel bis zur Seitenzahl
+
+\titlecontents{subsection}
+[5.387em] % Abstand linker Textrand bis Kapitelueberschriften
+{} % Textformatierung
+{\contentslabel{2.605em}}% Abstand und Nummerierung vor Kapitelueberschriften
+{}
+{\vzPunkte\contentspage} % Formatierung nach Titel bis zur Seitenzahl
+
+

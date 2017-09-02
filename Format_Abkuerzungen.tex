@@ -1,0 +1,53 @@
+
+%	\renewcommand{\nomlabel}[1]{#1 \dotfill}	% Punkte zw. Abkuerzung und Erklaerung
+	\setlength{\nomlabelwidth}{2.0cm} 			% Abstand zwischen Abkuerzung und Erklaerung
+	\setlength{\nomitemsep}{-0.5pc}			% Zeilenabstaende verkleinern
+
+
+\ifthenelse{\equal{\Verzeichnisse}{AbkuerzungSymbol}}{
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%   Abkuerzungsverzeichnis vor Symbolverzeichnis (oder nur Abkuerzungsverzeichnis)		%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	\renewcommand{\nomname}{Abkürzungsverzeichnis}	
+	
+	\makeindex
+	\makenomenclature
+	
+	\renewcommand{\nomgroup}[1]{%
+		\ifthenelse{\equal{#1}{A}}{
+			\markboth{ABKÜRZUNGSVERZEICHNIS}{ABKÜRZUNGSVERZEICHNIS}
+		}{%
+			\newpage
+			\ifthenelse{\equal{#1}{S}}{%
+				\chapter*{Symbolverzeichnis} %\hspace*{-\nomlabelwidth}\hspace*{-\labelsep}
+				\markboth{SYMBOLVERZEICHNIS}{SYMBOLVERZEICHNIS}
+				\vspace{0.22cm}
+				\ifthenelse{\equal{\preChapterToC}{ja}}{
+					\addcontentsline{toc}{chapter}{Symbolverzeichnis}
+				}{}
+			}{}
+		}
+	}
+}
+{	
+	\ifthenelse{\equal{\Verzeichnisse}{Symbol}}{
+
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%%%   Nur Symbolverzeichnis									%%%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				
+		\renewcommand{\nomname}{Symbolverzeichnis}
+		
+		\makeindex
+		\makenomenclature
+		
+		\renewcommand{\nomgroup}[1]
+		{
+			\ifthenelse{\equal{#1}{S}}{
+				\markboth{SYMBOLVERZEICHNIS}{SYMBOLVERZEICHNIS}
+			}{}
+		}
+	}{}
+}

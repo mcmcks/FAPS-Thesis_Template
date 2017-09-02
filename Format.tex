@@ -1,0 +1,121 @@
+% Offset zur einfacheren Abstandsangabe (Papier links oben ist 'Null')
+\setlength{\hoffset}{0cm}
+\setlength{\voffset}{0cm}
+
+% Kopfzeile
+\headheight.7cm		% Hoehe vom Header
+
+% Textfeld
+\textheight23.8cm
+\textwidth16cm
+
+% Layout vertikale Abstaende
+\headsep1.1cm															% Abstand Header - Text
+\setlength{\topmargin}{-1in + 1.2cm}			% Abstand oberer Seitenrand - Header
+\setlength{\footskip}{1.5cm}							% Abstand Text - Fusszeile
+
+% Layout horizontale Abstaende gerade Seiten
+\setlength{\evensidemargin}{-0.5cm}											% Abstand linker Seitenrand zum Textrand
+% Layout horizontale Abstaende ungerade Seiten
+\ifthenelse{\boolean{@twoside}}{
+	\setlength{\oddsidemargin}{-\evensidemargin}						% Abstand rechter Seitenrand zum Textrand
+}{}
+
+% Notizbereiche
+\setlength{\marginparwidth}{1.5cm}
+\marginparsep8pt
+
+
+%% Fuss- und Kopfzeilenformatierung
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{ \markboth{\MakeUppercase{\thechapter\; #1}}{} }
+\renewcommand{\sectionmark}[1]{ \markright{\MakeUppercase{\thesection \; #1}} }
+\fancyhf{}	% Alle Felder loeschen
+
+% Abhaengig von Drucklayout
+\ifthenelse{\boolean{@twoside}}{
+	% Kopf- und Fußzeilen der Kapitelseiten
+	\fancypagestyle{plain}{
+   		\fancyhf{}
+   		\renewcommand{\headrulewidth}{0pt}
+   		\renewcommand{\footrulewidth}{0.75pt}
+   		\fancyhead{}
+   		\fancyfoot[OR]{\thepage}
+	}
+	
+	% Kopf- und Fusszeile bei Nicht-Kapitelseiten
+	\renewcommand{\headrulewidth}{0.75pt}
+  \renewcommand{\footrulewidth}{0.75pt}
+	\fancyfoot[EL,OR]{\thepage}
+	\fancyhead[LO]{\scriptsize \rightmark}
+	\fancyhead[RE]{\scriptsize \leftmark}
+	
+}{
+}
+
+%% Ueberschriftenformatierung
+\titlespacing{\chapter}{0pt}{0pt}{75pt}
+\titleformat
+{\chapter} % command
+[hang] % shape
+{\bfseries\LARGE} % format
+{\thechapter \ \ } % label
+{0pt} % sep
+{} % before-code
+[] % after-code
+
+
+%% Textformatierung
+\renewcommand{\baselinestretch}{1.25}\normalsize	% Zeilenabstand
+\frenchspacing 	% Ausschalten des Zusatzzwischenraums nach Satzzeichen
+
+% Einstellung des Absatzes
+\parskip1ex plus .2ex minus .2ex % zusaetzlicher Abstand
+\parindent0pt % Einzug
+
+\setcounter{secnumdepth}{3} % 3 Gliederungsebenen im laufenden Text
+
+\sloppy % Laesst unguenstige Zeilenumbrueche bei schmalen Spalten zu
+
+
+%% Labels und Referenzierung
+\renewcommand\thesubfigure{ \alph{subfigure})} 
+
+
+%% Nicht-nummerierte Listen
+\setlist[itemize,1]{
+	label={\color{fapsgruen}$\medblacksquare$}, % Label
+	itemsep=5pt, % Abstand der Items innerhalb einer Ebene
+	parsep=-5pt, % Abstand Paragraphen
+	topsep=5pt, % Abstand Text/Items
+	labelsep=5pt % Abstand Label/Text (bei Aenderung: leftmargin aus setlist[itemize,2])
+}
+\setlist[itemize,2]{
+	label={\color{fapsgruen}$\smallblacksquare$}, % Label
+	itemsep=-1pt, % Abstand der Items innerhalb einer Ebene
+	parsep=0pt, % Abstand Paragraphen
+	labelsep=3pt, % Abstand Label/Text
+	leftmargin=9pt % Einzug (labelsep aus setlist[itemize,1] beachten)
+}
+
+%% Nummerierte Listen arabisch/roemisch
+\newenvironment{einszweidrei}{\begin{enumerate}\renewcommand{\labelenumi}{\arabic{enumi}.}}{\end{enumerate}}
+\newenvironment{iii}{\begin{enumerate}\renewcommand{\labelenumi}{\roman{enumi})}}{\end{enumerate}}
+
+
+
+%% Formelausrichtung
+%\ifthenelse{\equal{\Formelausrichtung}{links}}{
+	%\setlength{\mathindent}{2cm}
+%}{}
+
+%% Formatierung figures und Co.
+%\newlength{\matfigwidth}
+%\setlength{\matfigwidth}{12cm}
+%\newlength{\figheight}
+%\setlength{\figheight}{10cm}
+%\setlength{\abovecaptionskip}{10pt}
+%
+%\captionsetup{width=.95\textwidth}
+
+\raggedbottom 
